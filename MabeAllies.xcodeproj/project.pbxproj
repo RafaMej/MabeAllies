@@ -6,14 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		50EAA03B2FAAA15D0044794B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 50EAA03A2FAAA15D0044794B /* FirebaseAuth */; };
+		50EAA03D2FAAA15D0044794B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 50EAA03C2FAAA15D0044794B /* FirebaseCore */; };
+		50EAA03F2FAAA15D0044794B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 50EAA03E2FAAA15D0044794B /* FirebaseFirestore */; };
+		50EAA0412FAAA15D0044794B /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 50EAA0402FAAA15D0044794B /* FirebaseFirestoreCombine-Community */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		50EA9FAA2FAAA06B0044794B /* MabeAllies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MabeAllies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50EA9FAA2FAAA06B0044794B /* MabeAllies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MabeAllies.app; path = "/Users/rafaelm/Documents/iOS DEV/Pruebas/MabeAllies/build/Debug-iphoneos/MabeAllies.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		50EA9FAC2FAAA06B0044794B /* MabeAllies */ = {
+		50EAA13E2FAAA8C90044794B /* MabeDashboard */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MabeAllies;
+			path = MabeDashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EAA03D2FAAA15D0044794B /* FirebaseCore in Frameworks */,
+				50EAA0412FAAA15D0044794B /* FirebaseFirestoreCombine-Community in Frameworks */,
+				50EAA03B2FAAA15D0044794B /* FirebaseAuth in Frameworks */,
+				50EAA03F2FAAA15D0044794B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,17 +43,8 @@
 		50EA9FA12FAAA06B0044794B = {
 			isa = PBXGroup;
 			children = (
-				50EA9FAC2FAAA06B0044794B /* MabeAllies */,
-				50EA9FAB2FAAA06B0044794B /* Products */,
+				50EAA13E2FAAA8C90044794B /* MabeDashboard */,
 			);
-			sourceTree = "<group>";
-		};
-		50EA9FAB2FAAA06B0044794B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				50EA9FAA2FAAA06B0044794B /* MabeAllies.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,10 +63,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				50EA9FAC2FAAA06B0044794B /* MabeAllies */,
+				50EAA13E2FAAA8C90044794B /* MabeDashboard */,
 			);
 			name = MabeAllies;
 			packageProductDependencies = (
+				50EAA03A2FAAA15D0044794B /* FirebaseAuth */,
+				50EAA03C2FAAA15D0044794B /* FirebaseCore */,
+				50EAA03E2FAAA15D0044794B /* FirebaseFirestore */,
+				50EAA0402FAAA15D0044794B /* FirebaseFirestoreCombine-Community */,
 			);
 			productName = MabeAllies;
 			productReference = 50EA9FAA2FAAA06B0044794B /* MabeAllies.app */;
@@ -94,8 +100,11 @@
 			);
 			mainGroup = 50EA9FA12FAAA06B0044794B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 50EA9FAB2FAAA06B0044794B /* Products */;
+			productRefGroup = 50EA9FA12FAAA06B0044794B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -269,12 +278,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.Pruebas.MabeAllies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -301,12 +313,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.Pruebas.MabeAllies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -332,6 +347,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50EAA03A2FAAA15D0044794B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		50EAA03C2FAAA15D0044794B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		50EAA03E2FAAA15D0044794B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		50EAA0402FAAA15D0044794B /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EAA0392FAAA15D0044794B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50EA9FA22FAAA06B0044794B /* Project object */;
 }
