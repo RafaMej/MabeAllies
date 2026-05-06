@@ -1,14 +1,13 @@
 // SidebarView.swift
-// iPadOS: List sidebar nativa. Añade .indexacion vs macOS que lo tenía en AppRootView separado.
+// iPadOS: List sidebar nativa con navegación simplificada.
 // Reemplaza: NSImage → Image("AppIcon"), VStack manual → List(.sidebar)
+// Vistas disponibles: Dashboard, Sentimiento, Simulador, Indexación, Configuración
 
 internal import SwiftUI
 
 enum NavDestination: String, CaseIterable, Hashable {
     case dashboard      = "Dashboard"
-    case consultas      = "Búsqueda RAG"
     case sentimiento    = "Sentimiento"
-    case eficiencia     = "Eficiencia"
     case simulador      = "Simulador"
     case indexacion     = "Indexación"
     case configuracion  = "Configuración"
@@ -16,9 +15,7 @@ enum NavDestination: String, CaseIterable, Hashable {
     var icon: String {
         switch self {
         case .dashboard:    return "square.grid.2x2.fill"
-        case .consultas:    return "magnifyingglass.circle"
         case .sentimiento:  return "heart"
-        case .eficiencia:   return "waveform.path.ecg"
         case .simulador:    return "bubble.left.and.bubble.right"
         case .indexacion:   return "doc.badge.plus"
         case .configuracion:return "gearshape"
@@ -77,3 +74,35 @@ struct SidebarView: View {
         .accessibilityLabel("Sesión activa: Ana Martínez, Administradora de RRHH")
     }
 }
+#Preview("Sidebar View") {
+    NavigationSplitView {
+        SidebarView(selectedDestination: .constant(.dashboard))
+    } detail: {
+        Text("Select an item")
+            .navigationTitle("Content")
+    }
+}
+
+#Preview("Sidebar - No Selection") {
+    NavigationSplitView {
+        SidebarView(selectedDestination: .constant(nil))
+    } detail: {
+        Text("Select an item")
+            .navigationTitle("Content")
+    }
+}
+
+#Preview("Sidebar - All States") {
+    VStack(spacing: 20) {
+        ForEach(NavDestination.allCases, id: \.self) { destination in
+            NavigationSplitView {
+                SidebarView(selectedDestination: .constant(destination))
+            } detail: {
+                Text(destination.rawValue)
+                    .navigationTitle(destination.rawValue)
+            }
+            .frame(height: 300)
+        }
+    }
+}
+

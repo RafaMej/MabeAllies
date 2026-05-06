@@ -1,6 +1,6 @@
 // RootNavigationView.swift
 // Reemplaza MainWindowView.swift (macOS HStack sidebar fijo) con NavigationSplitView nativo iPadOS.
-// Todas las secciones del original están presentes y conectadas al backend real.
+// Navegación: Dashboard, Sentimiento, Simulador, Indexación, Configuración.
 
 internal import SwiftUI
 internal import SwiftData
@@ -26,7 +26,7 @@ struct RootNavigationView: View {
         }
     }
 
-    // MARK: — Router (todas las secciones del original)
+    // MARK: — Router
 
     @ViewBuilder
     private var contentView: some View {
@@ -36,16 +36,9 @@ struct RootNavigationView: View {
             DashboardView()
                 .environmentObject(dashboardVM)
 
-        case .consultas:
-            BusquedaRAGView()
-
         case .sentimiento:
             placeholder(icon: "heart", title: "Sentimiento",
                         subtitle: "Análisis profundo de sentimiento organizacional en desarrollo")
-
-        case .eficiencia:
-            placeholder(icon: "waveform.path.ecg", title: "Eficiencia",
-                        subtitle: "Métricas avanzadas de eficiencia del modelo en desarrollo")
 
         case .simulador:
             SimuladorView(container: modelContext.container)
