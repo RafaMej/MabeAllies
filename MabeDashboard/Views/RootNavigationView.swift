@@ -7,7 +7,6 @@ internal import SwiftData
 
 struct RootNavigationView: View {
     @EnvironmentObject var dashboardVM: DashboardViewModel
-    @StateObject private var sentimentVM  = SentimentViewModel()
     @StateObject private var pipelineVM   = QueryPipelineViewModel()
 
     @State private var selectedDestination: NavDestination? = .dashboard
@@ -37,8 +36,7 @@ struct RootNavigationView: View {
                 .environmentObject(dashboardVM)
 
         case .sentimiento:
-            placeholder(icon: "heart", title: "Sentimiento",
-                        subtitle: "Análisis profundo de sentimiento organizacional en desarrollo")
+            SentimientoView()
 
         case .simulador:
             SimuladorView(container: modelContext.container)
